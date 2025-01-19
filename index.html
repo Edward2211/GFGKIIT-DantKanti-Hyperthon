@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Game</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Quiz Game</h1>
+    <div id="domain-selection">
+      <h2>Select Your Quiz Domain</h2>
+      <button onclick="startQuiz('gk')">General Knowledge</button>
+      <button onclick="startQuiz('maths')">Maths</button>
+      <button onclick="startQuiz('sports')">Sports</button>
+      <button onclick="startQuiz('technical')">Technical</button>
+    </div>
+
+    <div id="quiz-game" class="hidden">
+      <div id="question-container">
+        <p id="question">Question will appear here</p>
+        <div id="options"></div>
+      </div>
+      <div id="progress">Question: <span id="current">0</span>/15</div>
+      <div id="score">Score: <span id="points">0 <i class="fa-solid fa-star"></i></span></div>
+      <progress id="progress-bar" value="0" max="100"></progress>
+      <button id="next-btn" onclick="nextQuestion()" class="hidden">Next</button>
+    </div>
+    
+    <div id="game-over" class="hidden">
+      <h2>Game Over!</h2>
+      <p>Your final score is <span id="final-score"></span></p>
+      <p id="loss-msg"></p>
+      <button onclick="restartGame()">Play Again</button>
+    </div>
+    
+    <button id="start-btn" onclick="startGame()" class="hidden"><i class="fa-solid fa-play"></i> Start Game</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
