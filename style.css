@@ -3,25 +3,69 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: #1e0202;
+    position: relative;
+  }
+  
+  .back {
+    height: 100%;
+    width: 100%;
+  }
+  
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('purple.jpeg');
+    background-size: cover;
+    filter: blur(8px);
+    z-index: -1;
   }
   
   .quiz-container {
     max-width: 600px;
+    height: auto;
     margin: 50px auto;
-    background: #fff;
-    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    color: rgba(226, 233, 224, 0.788);
+    font-family: cursive;
+    font-weight: 800;
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
   h1 {
-    font-size: 2em;
-    color: #333;
+    font-size: 3em;
+    color: #f114abfe;
+    font-weight: 800;
   }
   
   #question-container {
     margin: 20px 0;
+  }
+  
+  #domain-selection button {
+    padding: 15px 35px;
+    font-size: 1.2em;
+    background: #1232d1;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 15px;
+    transition: transform 0.6s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    display: inline-block;
+  }
+  
+  #domain-selection button:hover {
+    background-color: #0e1c8d;
+    box-shadow: 0 0 15px rgba(18, 50, 150, 0.8);
+    transform: translateY(-8px) scale(1.1);
   }
   
   #question {
@@ -33,31 +77,39 @@ body {
     display: block;
     background: #007BFF;
     color: white;
-    padding: 10px;
-    margin: 10px auto;
+    padding: 15px;
+    margin: 15px auto;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     width: 100%;
-    max-width: 200px;
+    max-width: 220px;
+    font-weight: 700;
+    font-style: oblique;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: background-color 0.3s ease, transform 0.3s ease, scale 0.3s ease;
   }
   
   #options button:hover {
     background: #0056b3;
+    transform: translateY(-8px) scale(1.1);
   }
   
   #start-btn, #next-btn {
-    padding: 10px 20px;
+    padding: 15px 35px;
+    font-size: 1.2em;
     background: #28a745;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1em;
+    margin: 15px;
+    transition: background-color 0.3s ease, transform 0.3s ease, scale 0.3s ease;
   }
   
   #start-btn:hover, #next-btn:hover {
     background: #218838;
+    transform: translateY(-8px) scale(1.1);
   }
   
   #progress, #score {
@@ -68,3 +120,138 @@ body {
   .hidden {
     display: none;
   }
+  
+  .flip-button.flipped {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-button span {
+    display: block;
+    backface-visibility: hidden;
+  }
+  
+  .knowledge {
+    background-image: url(gk.png);
+  }
+  
+  #game-over button {
+    padding: 15px 35px;
+    font-size: 1.2em;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 15px;
+    transition: background-color 0.3s ease, transform 0.3s ease, scale 0.3s ease;
+  }
+  
+  #game-over button:hover {
+    background: #218838;
+    transform: translateY(-8px) scale(1.1);
+  }
+  
+  /* Media Queries for responsiveness */
+  
+  /* For medium screens (768px and below) */
+  @media (max-width: 768px) {
+    .quiz-container {
+      width: 90%;
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 2em;
+    }
+  
+    #domain-selection button {
+      font-size: 1.1em;
+      padding: 12px 25px;
+      width: 100%;
+    }
+  
+    #options button {
+      font-size: 1em;
+      padding: 12px;
+      width: 100%;
+    }
+  
+    #start-btn, #next-btn {
+      font-size: 1.1em;
+      padding: 12px 25px;
+    }
+  
+    #game-over button {
+      font-size: 1.1em;
+      padding: 12px 25px;
+    }
+  }
+  
+  /* For small screens (480px and below) */
+  @media (max-width: 480px) {
+    .quiz-container {
+      width: 95%;
+      padding: 15px;
+    }
+  
+    h1 {
+      font-size: 1.8em;
+    }
+  
+    #domain-selection button {
+      font-size: 1em;
+      padding: 10px 20px;
+      width: 100%;
+    }
+  
+    #options button {
+      font-size: 0.9em;
+      padding: 10px;
+      width: 100%;
+    }
+  
+    #start-btn, #next-btn {
+      font-size: 1em;
+      padding: 10px 20px;
+    }
+  
+    #game-over button {
+      font-size: 1em;
+      padding: 10px 20px;
+    }
+  }
+  
+  /* For extra small screens (320px and below) */
+  @media (max-width: 320px) {
+    .quiz-container {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    h1 {
+      font-size: 1.5em;
+    }
+  
+    #domain-selection button {
+      font-size: 0.9em;
+      padding: 8px 15px;
+      width: 100%;
+    }
+  
+    #options button {
+      font-size: 0.8em;
+      padding: 8px;
+      width: 100%;
+    }
+  
+    #start-btn, #next-btn {
+      font-size: 0.9em;
+      padding: 8px 15px;
+    }
+  
+    #game-over button {
+      font-size: 0.9em;
+      padding: 8px 15px;
+    }
+  }
+  
