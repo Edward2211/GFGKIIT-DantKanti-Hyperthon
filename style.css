@@ -39,80 +39,58 @@ body {
   }
   
   h1 {
-    font-size: 3em;
+    font-size: 2.5em;
     color: #f114abfe;
     font-weight: 800;
+    margin: 10px 0;
   }
   
   #question-container {
     margin: 20px 0;
   }
   
-  #domain-selection button {
-    padding: 15px 35px;
+  #domain-selection button,
+  #options button,
+  #start-btn,
+  #next-btn,
+  #game-over button {
+    padding: 15px 30px;
     font-size: 1.2em;
     background: #1232d1;
-    color: rgb(255, 255, 255);
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     margin: 15px;
-    transition: transform 0.6s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    display: inline-block;
+    transition: transform 0.3s ease, background-color 0.3s ease;
   }
   
-  #domain-selection button:hover {
+  #domain-selection button:hover,
+  #options button:hover,
+  #start-btn:hover,
+  #next-btn:hover,
+  #game-over button:hover {
     background-color: #0e1c8d;
-    box-shadow: 0 0 15px rgba(18, 50, 150, 0.8);
-    transform: translateY(-8px) scale(1.1);
-  }
-  
-  #question {
-    font-size: 1.5em;
-    margin-bottom: 20px;
+    transform: scale(1.05);
   }
   
   #options button {
-    display: block;
+    border: 2px solid white;
+    width: calc(100% - 30px);
+    max-width: 300px;
+    margin: 10px auto;
     background: #007BFF;
-    color: white;
-    padding: 15px;
-    margin: 15px auto;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    max-width: 220px;
     font-weight: 700;
     font-style: oblique;
     font-family: Arial, Helvetica, sans-serif;
-    transition: background-color 0.3s ease, transform 0.3s ease, scale 0.3s ease;
   }
   
   #options button:hover {
     background: #0056b3;
-    transform: translateY(-8px) scale(1.1);
   }
   
-  #start-btn, #next-btn {
-    padding: 15px 35px;
-    font-size: 1.2em;
-    background: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 15px;
-    transition: background-color 0.3s ease, transform 0.3s ease, scale 0.3s ease;
-  }
-  
-  #start-btn:hover, #next-btn:hover {
-    background: #218838;
-    transform: translateY(-8px) scale(1.1);
-  }
-  
-  #progress, #score {
+  #progress,
+  #score {
     margin: 20px 0;
     font-size: 1.2em;
   }
@@ -121,39 +99,13 @@ body {
     display: none;
   }
   
-  .flip-button.flipped {
-    transform: rotateY(180deg);
-  }
-  
-  .flip-button span {
-    display: block;
-    backface-visibility: hidden;
-  }
-  
   .knowledge {
     background-image: url(gk.png);
   }
   
-  #game-over button {
-    padding: 15px 35px;
-    font-size: 1.2em;
-    background: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 15px;
-    transition: background-color 0.3s ease, transform 0.3s ease, scale 0.3s ease;
-  }
+  /* Responsive Design */
   
-  #game-over button:hover {
-    background: #218838;
-    transform: translateY(-8px) scale(1.1);
-  }
-  
-  /* Media Queries for responsiveness */
-  
-  /* For medium screens (768px and below) */
+  /* Medium screens (768px and below) */
   @media (max-width: 768px) {
     .quiz-container {
       width: 90%;
@@ -164,30 +116,21 @@ body {
       font-size: 2em;
     }
   
-    #domain-selection button {
-      font-size: 1.1em;
-      padding: 12px 25px;
-      width: 100%;
+    #domain-selection button,
+    #options button,
+    #start-btn,
+    #next-btn,
+    #game-over button {
+      font-size: 1em;
+      padding: 12px 20px;
     }
   
     #options button {
-      font-size: 1em;
-      padding: 12px;
-      width: 100%;
-    }
-  
-    #start-btn, #next-btn {
-      font-size: 1.1em;
-      padding: 12px 25px;
-    }
-  
-    #game-over button {
-      font-size: 1.1em;
-      padding: 12px 25px;
+      width: calc(100% - 20px);
     }
   }
   
-  /* For small screens (480px and below) */
+  /* Small screens (480px and below) */
   @media (max-width: 480px) {
     .quiz-container {
       width: 95%;
@@ -198,30 +141,21 @@ body {
       font-size: 1.8em;
     }
   
-    #domain-selection button {
-      font-size: 1em;
-      padding: 10px 20px;
-      width: 100%;
+    #domain-selection button,
+    #options button,
+    #start-btn,
+    #next-btn,
+    #game-over button {
+      font-size: 0.9em;
+      padding: 10px 15px;
     }
   
     #options button {
-      font-size: 0.9em;
-      padding: 10px;
-      width: 100%;
-    }
-  
-    #start-btn, #next-btn {
-      font-size: 1em;
-      padding: 10px 20px;
-    }
-  
-    #game-over button {
-      font-size: 1em;
-      padding: 10px 20px;
+      width: calc(100% - 15px);
     }
   }
   
-  /* For extra small screens (320px and below) */
+  /* Extra small screens (320px and below) */
   @media (max-width: 320px) {
     .quiz-container {
       width: 100%;
@@ -232,26 +166,17 @@ body {
       font-size: 1.5em;
     }
   
-    #domain-selection button {
-      font-size: 0.9em;
-      padding: 8px 15px;
-      width: 100%;
+    #domain-selection button,
+    #options button,
+    #start-btn,
+    #next-btn,
+    #game-over button {
+      font-size: 0.8em;
+      padding: 8px 10px;
     }
   
     #options button {
-      font-size: 0.8em;
-      padding: 8px;
       width: 100%;
-    }
-  
-    #start-btn, #next-btn {
-      font-size: 0.9em;
-      padding: 8px 15px;
-    }
-  
-    #game-over button {
-      font-size: 0.9em;
-      padding: 8px 15px;
     }
   }
   
